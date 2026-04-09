@@ -33,13 +33,8 @@ print(f"Simulación 1: Infectados al final: {first_simulation}")
 print(f"Simulación 2: Infectados al final: {second_simulation}")
 print(f"Simulación 3: Infectados al final: {third_simulation}")
 
-print("\nConclusión:")
-
 minimum_infectados = min(first_simulation, second_simulation, third_simulation)
 maximum_infectados = max(first_simulation, second_simulation, third_simulation)
 diferencia = maximum_infectados - minimum_infectados
 print(f"Variación\n")
 print(f"Entre las tres simulaciones, el número de infectados al final varió entre {minimum_infectados} y {maximum_infectados}, con una diferencia de {diferencia}.")
-
-print(f"Diferencia entre simulaciones\n")
-print(f"La mayor diferencia fue de {diferencia} infectados entre las simulaciones.")
