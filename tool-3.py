@@ -1,21 +1,15 @@
-import random as r
+import random
 
-l = int(input("ingrese cuantos lanzamientos de moneda se harán: "))
+lanzamientos = int(input("Ingrese cuántos lanzamientos de moneda se harán: "))
 
-lanzamientos = 0
-cruz = 0
-cara = 0
-while (lanzamientos < l):
-    sel = r.randint(1, 2)
+conteo = {"cara": 0, "cruz": 0}
 
-    if (sel == 1):
-        cara = cara + 1
-        print(f"cara ha aparecido {cara} veces.")
-    else:
-        cruz = cruz + 1
-        print(f"Cruz ha aparecido {cruz} veces.")
-    
-    lanzamientos += 1
+for _ in range(lanzamientos):
+    resultado = random.choice(["cara", "cruz"])
+    conteo[resultado] += 1
+    print(f"{resultado.capitalize()} ha aparecido {conteo[resultado]} veces.")
 
-print(f"la frecuencia con la que aparece cara es {cara} de cada {lanzamientos} lanzamientos.")
-print(f"la frecuencia con la que aparece cruz es {cruz} de cada {lanzamientos} lanzamientos.")
+print("\nResultados finales:\n")
+
+for lado, cantidad in conteo.items():
+    print(f"{lado.capitalize()}: {cantidad} de {lanzamientos} lanzamientos")
